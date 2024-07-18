@@ -29,4 +29,8 @@ public class PatientService {
     public void deletePatient(Long id) {
         patientRepository.deleteById(id);
     }
+    
+    public List<Patients> getPatientsByDoctorId(long id){
+    	return patientRepository.getPatientsByDoctorId(id);
+    }
 }

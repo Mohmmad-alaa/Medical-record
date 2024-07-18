@@ -12,6 +12,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 public class Patients {
 
@@ -38,54 +43,6 @@ public class Patients {
 		this.fullName = fullName;
 		this.nationalID = nationalID;
 		this.dateOfBirth = dateOfBirth;
-		this.gender = gender;
-	}
-
-	public long getPatientID() {
-		return patientID;
-	}
-
-	public void setPatientID(long patientID) {
-		this.patientID = patientID;
-	}
-
-	public Doctors getDoctorID() {
-		return doctor;
-	}
-
-	public void setDoctorID(Doctors doctorID) {
-		this.doctor = doctorID;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public String getNationalID() {
-		return nationalID;
-	}
-
-	public void setNationalID(String nationalID) {
-		this.nationalID = nationalID;
-	}
-
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

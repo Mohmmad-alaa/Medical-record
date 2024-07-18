@@ -20,26 +20,31 @@ import com.example.demo.services.PatientService;
 @RequestMapping("/api/patients")
 @CrossOrigin(origins = "*")
 public class PatientController {
-    @Autowired
-    private PatientService patientService;
+	@Autowired
+	private PatientService patientService;
 
-    @GetMapping
-    public List<Patients> getAllPatients() {
-        return patientService.getAllPatients();
-    }
+	@GetMapping
+	public List<Patients> getAllPatients() {
+		return patientService.getAllPatients();
+	}
+/*
+	@GetMapping("/{id}")
+	public Patients getPatientById(@PathVariable Long id) {
+		return patientService.getPatientById(id);
+	}
+*/
+	@PostMapping
+	public Patients createPatient(@RequestBody Patients patient) {
+		return patientService.savePatient(patient);
+	}
 
-    @GetMapping("/{id}")
-    public Patients getPatientById(@PathVariable Long id) {
-        return patientService.getPatientById(id);
-    }
+	@DeleteMapping("/{id}")
+	public void deletePatient(@PathVariable Long id) {
+		patientService.deletePatient(id);
+	}
 
-    @PostMapping
-    public Patients createPatient(@RequestBody Patients patient) {
-        return patientService.savePatient(patient);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deletePatient(@PathVariable Long id) {
-        patientService.deletePatient(id);
-    }
+	@GetMapping("/byDoctor/{id}")
+	public List<Patients> getPatientsByDoctorId(@PathVariable Long id) {
+		return patientService.getPatientsByDoctorId(id);
+	}
 }

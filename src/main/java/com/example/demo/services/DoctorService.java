@@ -11,22 +11,26 @@ import com.example.demo.repository.DoctorRepository;
 
 @Service
 public class DoctorService {
-    @Autowired
-    private DoctorRepository doctorRepository;
+	@Autowired
+	private DoctorRepository doctorRepository;
 
-    public List<Doctors> getAllDoctors() {
-        return doctorRepository.findAll();
-    }
+	public List<Doctors> getAllDoctors() {
+		return doctorRepository.findAll();
+	}
 
-    public Doctors getDoctorById(Long id) {
-        return doctorRepository.findById(id).orElse(null);
-    }
+	public Doctors getDoctorById(Long id) {
+		return doctorRepository.findById(id).orElse(null);
+	}
 
-    public Doctors saveDoctor(Doctors doctor) {
-        return doctorRepository.save(doctor);
-    }
+	public Doctors saveDoctor(Doctors doctor) {
+		return doctorRepository.save(doctor);
+	}
 
-    public void deleteDoctor(Long id) {
-        doctorRepository.deleteById(id);
-    }
+	public void deleteDoctor(Long id) {
+		doctorRepository.deleteById(id);
+	}
+
+	public Doctors getDoctorByEmailAndPassword(String email, String password) {
+		return doctorRepository.getDoctorByEmailAndPassword(email, password);
+	}
 }

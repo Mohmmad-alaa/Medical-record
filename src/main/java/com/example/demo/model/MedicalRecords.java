@@ -10,6 +10,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 @Entity
 public class MedicalRecords {
 	@Id
@@ -38,49 +42,6 @@ public class MedicalRecords {
 	}
 
 
-
-	public Patients getPatient() {
-		return patient;
-	}
-
-	public void setPatient(Patients patient) {
-		this.patient = patient;
-	}
-
-	public Doctors getDoctor() {
-		return doctor;
-	}
-
-	public void setDoctor(Doctors doctor) {
-		this.doctor = doctor;
-	}
-
-	public Date getRecordDate() {
-		return recordDate;
-	}
-
-	public void setRecordDate(Date recordDate) {
-		this.recordDate = recordDate;
-	}
-
-	public String getNotes() {
-		return notes;
-	}
-
-	public void setNotes(String notes) {
-		this.notes = notes;
-	}
-
-	public long getRecordID() {
-		return recordID;
-	}
-
-	public void setRecordID(long recordID) {
-		this.recordID = recordID;
-	}
-	
-	
-	
 	
 }
 /*
